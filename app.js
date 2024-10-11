@@ -1,7 +1,12 @@
-const loadAllFoods=async()=>{
+const loadAllFoods=async(status)=>{
     const res=await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
     const data=await res.json()
-    displayAllFoods(data.categories)
+    if(status){
+        displayAllFoods(data.categories)
+    }
+    else{
+        displayAllFoods(data.categories.slice(0,6))
+    }
 }
 
 
@@ -12,7 +17,7 @@ const displayAllFoods=(datas)=>{
     datas.forEach(data => {
         boxContainer.innerHTML+=`
 
-        <div class="box flex justify-center items-center gap-4 w-[90%] shadow-xl rounded-xl p-2">
+        <div class="box flex justif-center items-center gap-4 w-[90%] shadow-xl rounded-xl p-2">
 <div class="box-left w-[40%]">
 <img class="w-full h-full rounded-xl" src="${data.strCategoryThumb}">
 </div>
@@ -31,4 +36,10 @@ const displayAllFoods=(datas)=>{
 }
 
 
-loadAllFoods()
+const handleViewAll=()=>{
+    loadAllFoods(true)
+}
+
+
+
+loadAllFoods(false)
