@@ -62,10 +62,14 @@
 <h1 class="font-extrabold text-[30px] text-center">Your Favourite Food</h1>
 
 
-<div id="box-container" class="boxes grid justify-items-center mt-4 gap-5 grid-cols-1 md:grid-cols-2">
+<div id="loading-spinner" style="display: none;" class="text-center">
+    <span class="loading loading-infinity loading-lg  w-[200px]"></span>
+</div>
+
+<div id="box-container" class="boxes grid justify-items-center mt-4 gap-5 grid-cols-1 md:grid-cols-2 2xl:grid-cols-3">
 
 
-
+    
 
 
 
@@ -124,7 +128,18 @@
 </main>
 
 
-
+<dialog id="my_modal" class="modal">
+  <div class="modal-box space-y-3" id="modal-container">
+    <h3 class="text-lg font-bold">Hello!</h3>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
 
 
