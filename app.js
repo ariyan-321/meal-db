@@ -47,7 +47,7 @@ const showDetails = (index) => {
         <img class="w-[200px] rounded-xl " src="${data.strMealThumb}" alt="" class="rounded-xl">
         <p class="font-bold">Category:${data.strCategory}<p>
         <p>${data.strInstructions}</p>
-        <p ><span class="font-bold">Youtube:</span>${data.strYoutube}</p>
+        <p ><span class="font-bold">Youtube:</span><a class="text-blue-500" target="_blank" href="${data.strYoutube}">${data.strYoutube}</a></p>
         <button onclick="document.getElementById('my_modal').close()" class="mt-4 px-4 py-2 bg-red-500 text-white rounded">Close</button>
     `;
     modal.showModal(); // Show the modal
